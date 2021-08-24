@@ -1,4 +1,5 @@
 NPROC=$(shell sed -n 25p data/init_data.txt | tr -d -c 0-9)
+OUT=/media/sf_Archdata/
 
 #Compiling parameters
 CXX = mpic++
@@ -29,7 +30,7 @@ show:
 	@xpdf data/activation_total.pdf &
 
 send:
-	@cp data/*pdf /media/sf_Data_machine/
+	@cp data/*pdf $(OUT)
 
 main.x: $(DEPENDENCIES)
 	@echo -e 'Compiling' $@ '... \c'

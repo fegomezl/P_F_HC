@@ -18,7 +18,7 @@ void print(const int &time, const int &pid, const CONFIG &config,
                         + section.balls[ii].mass*section.balls[ii].pos.z()*config.g)*std::pow(10,-6);
 
         //Energia mecanica de interaccion con las paredes
-        double h, H; //Distancias de interpenetracion con las paredes
+        /*double h, H; //Distancias de interpenetracion con las paredes
 
         //Fuerza con las paredes x=0 y x=Lx
         h = section.balls[ii].rad - section.balls[ii].pos.x();  
@@ -42,10 +42,10 @@ void print(const int &time, const int &pid, const CONFIG &config,
         if (h > config.err)
             section.energy += (2*config.k_wall/5)*std::pow(h, 2.5);
         else if (H > config.err)
-            section.energy += (2*config.k_wall/5)*std::pow(H, 2.5);
+            section.energy += (2*config.k_wall/5)*std::pow(H, 2.5);*/
 
         //Energia mecanica de interaccion entre particulas
-        for (int jj = ii + 1; jj < section.balls.size(); jj++){
+        /*for (int jj = ii + 1; jj < section.balls.size(); jj++){
             double r = norma(section.balls[ii].pos - section.balls[jj].pos);
             double S = section.balls[ii].rad + section.balls[jj].rad - r;
             if (S > config.err){
@@ -53,7 +53,7 @@ void print(const int &time, const int &pid, const CONFIG &config,
                 if (jj >= section.local_size) a = 0.5; //Si una de las particulas es compartida, la energia se divide a la mitad para tener en cuenta los aportes de distintas secciones
                 section.energy += a*(2*config.k_ball/5)*std::pow(S, 2.5);
             }
-        }
+        }*/
     }
 
     //Actualiza las activaciones acumuladas de la seccion
